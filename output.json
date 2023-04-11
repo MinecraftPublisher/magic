@@ -1,0 +1,16 @@
+[
+    {
+        "type": "command",
+        "command": "log",
+        "expression": [
+            "kkk"
+        ]
+    },
+    {
+        "type": "command",
+        "command": "log",
+        "expression": [
+            "hi"
+        ]
+    }
+]
