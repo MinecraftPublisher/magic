@@ -7,6 +7,8 @@ const magic = ((text) => {
     const build = ((operation) => eval(`((arg1, arg2) => arg1 ${operation} arg2)`))
     const argbuilder = ((x, txt) => eval(`((${new Array(x).fill('').map((e, i) => `arg${i}`).join(', ')}) => ${txt.replaceAll('ARGS', new Array(x).fill('').map((e, i) => `arg${i}`).join(', '))})`))
     const builtin = ({
+        comment: (() => {}),
+
         add: reduce('+'),
         subtract: reduce('-'),
         multiply: reduce('*'),
