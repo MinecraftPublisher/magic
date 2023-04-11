@@ -131,5 +131,9 @@ const magic = ((text) => {
     return ast
 })
 
-// console.log(magic.parse(fs.readFileSync('test.magic', 'utf8')))
-magic(fs.readFileSync('test.magic', 'utf8'))
+let name = process.argv.slice(process.argv.length - 1)[0]
+if(fs.existsSync(name)) {
+    if(name.endsWith('.magic')) magic(fs.readFileSync(name, 'utf8'))
+    else console.log('Input file is not a magic script: ' + name)
+}
+else console.log('File not found: ' + name)
